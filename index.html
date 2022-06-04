@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>photoGallery</title>
+        <!-- ====fav icon====== -->
+        <link
+            rel="icon"
+            href="data:image/jpeg;base64,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"
+            type="image/png"
+            sizes="16*16"
+        />
+
+        <!-- ========bootstrap css=========-->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+            crossorigin="anonymous"
+        />
+        <!-- ========custom css=========-->
+        <link rel="stylesheet" href="css/style.css" type="text/css" />
+    </head>
+    <body>
+        <header>
+            <!-- ==================start nav================================== -->
+            <nav class="navbar navbar-expand-lg fixed-top">
+                <a href="index.html" class="navbar-brand text-light mx-3">
+                    <img
+                        src="assets/img/fav/favicon.png"
+                        width="70px"
+                        alt="logo"
+                       
+                    />
+                     <span class="text-uppercase fw-bold"><span class="h2">Tatsumi</span><span class="h4">Photo Studio</span> 
+                </a>
+                <button
+                    class="navbar-toggler navbuttons"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navmenus"
+                >
+                    <div class="line1 bg-light"></div>
+                    <div class="line2 bg-light"></div>
+                    <div class="line3 bg-light"></div>
+                </button>
+
+                <div
+                    class="navbar-collapse collapse justify-content-end text-uppercase"
+                    id="navmenus"
+                >
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a href="" class="nav-link m-2 menuitems">Home</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="" class="nav-link m-2 menuitems"
+                                >Mission</a
+                            >
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="" class="nav-link m-2 menuitems"
+                                >Collection</a
+                            >
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="" class="nav-link m-2 menuitems"
+                                >Gallery</a
+                            >
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="" class="nav-link m-2 menuitems"
+                                >Customer</a
+                            >
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="" class="nav-link m-2 menuitems"
+                                >Pricing</a
+                            >
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="" class="nav-link m-2 menuitems"
+                                >Contact</a
+                            >
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <!-- start banner -->
+            <div class="text-light text-center text-md-end banners">
+                <h1 class="text-uppercase display-6 bannerheaders">
+                    Weclome to<span class="display-3">Tatsumi</span>Photo Studio
+                </h1>
+                <p class="lead bannerparas">
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam placeat nihil quia aut dolorem exercitationem beatae voluptatum, minima laboriosam eos voluptatibus et corrupti velit provident ipsum quas, saepe repellendus sapiente.
+                    
+                </p>
+            </div>
+            <!-- end banner -->
+        </header>
+
+        <!-- start Mission -->
+        <section class="p-5 missions">
+            <div class="container-fluid">
+                <!--start title -->
+                <div class="row text-light text-center">
+                    <div class="col-12">
+                    <h1 class="display-4 mb-4">Our Mission</h1>
+                    <div class="mb-4 underlines"></div>
+                    <p class="lead">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odit delectus perferendis, est esse amet aliquid quas laboriosam omnis! Facere neque obcaecati dignissimos asperiores pariatur atque, cupiditate eius cum ad assumenda.</p>
+                    </div>
+                </div>
+                    <!-- end title -->
+                <div class="row my-5">
+                    <div class="col-md-4 text-center">
+                        
+                        <i class="fas fa-award fa-5x text-danger mb-4"></i>
+                        <h1 class="text-light mb-3">Creativity</h1>
+                        <p class="text-secondary">Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis beatae explicabo similique aut earum voluptatibus soluta, dignissimos saepe dolorum tenetur necessitatibus est velit obcaecati voluptas. Odit, totam explicabo. Distinctio, tempora?</p>
+                        
+                        
+                    </div>
+                    <div class="col-md-4 text-center">
+                        
+                        <i class="fas fa-thumbs-up fa-5x text-danger mb-4"></i>
+                        <h1 class="text-light mb-3">Quality</h1>
+                        <p class="text-secondary">Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis beatae explicabo similique aut earum voluptatibus soluta, dignissimos saepe dolorum tenetur necessitatibus est velit obcaecati voluptas. Odit, totam explicabo. Distinctio, tempora?</p>
+                        
+                        
+                    </div>
+                    <div class="col-md-4 text-center">
+                        
+                        <i class="fas fa-chart-line fa-5x text-danger mb-4"></i>
+                        <h1 class="text-light mb-3">Experience</h1>
+                        <p class="text-secondary">Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis beatae explicabo similique aut earum voluptatibus soluta, dignissimos saepe dolorum tenetur necessitatibus est velit obcaecati voluptas. Odit, totam explicabo. Distinctio, tempora?</p>
+                        
+                        
+                    </div>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-5">
+                        <img src="assets/img/etc/camera.png" alt="camera" width="360px" class="cameraimgs formlefts">
+                    </div>
+                    <div class="col-lg-7 text-white text-center text-lg-end missiontexts formrights">
+                        <h1 class="fw-bold h2">Tatsumi is the best photo studio in Myanmar</h1>
+                        <p class="lead">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odio modi reiciendis fugiat ab! Cum voluptatibus qui rem illo, harum nam accusantium repudiandae in dolore necessitatibus quae sed suscipit exercitationem voluptas.</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        <!-- end Mission -->
+
+
+        <!-- Start Collection -->
+        <section class="bg-secondary p-5 collections">
+            <div class="container-fluid">
+                 <!--start title -->
+                <div class="row">
+                    <div class="col-12 text-light text-center">
+                        <h1 class="display-4 mb-4">
+                           Collection 
+                        </h1>
+                        <div class="underlines mb-4"></div>
+                        <p class="lead">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed nisi adipisci quisquam beatae? Magnam sit harum sed error iusto, vitae neque eum distinctio ratione maxime earum, impedit nulla explicabo quod?</p>
+                    </div>
+                </div>
+                 <!--start title -->
+
+                 <div class="row">
+
+                    <div class="col-12 col-md-6 col-lg-4 my-4">
+                        <div class="card border-0">
+                            <img src="assets/img/gallery/photo1.jpg" alt="photo1" class="cardshadows" />
+                            <h5 class="text-uppercase text-light  fw-bold p-2 headings">nature photo</h5>
+                        </div>
+                        
+                    </div>
+
+                    <div class="col-12 col-md-6 col-lg-4 my-4">
+                        <div class="card border-0">
+                            <img src="assets/img/gallery/photo2.jpg" alt="photo2" class="cardshadows" />
+                            <h5 class="text-uppercase text-light  fw-bold p-2 headings">weeding photo</h5>
+                        </div>
+                        
+                    </div>
+
+                    <div class="col-12 col-md-6 col-lg-4 my-4">
+                        <div class="card border-0">
+                            <img src="assets/img/gallery/photo3.jpg" alt="photo3" class="cardshadows" />
+                            <h5 class="text-uppercase text-light  fw-bold p-2 headings">party photo</h5>
+                        </div>
+                        
+                    </div>
+
+                    <div class="col-12 col-md-6 col-lg-4 my-4">
+                        <div class="card border-0">
+                            <img src="assets/img/gallery/photo4.jpg" alt="photo4" class="cardshadows" />
+                            <h5 class="text-uppercase text-light  fw-bold p-2 headings">business photo</h5>
+                        </div>
+                        
+                    </div>
+
+                    <div class="col-12 col-md-6 col-lg-4 my-4">
+                        <div class="card border-0">
+                            <img src="assets/img/gallery/photo5.jpg" alt="photo5" class="cardshadows" />
+                            <h5 class="text-uppercase text-light  fw-bold p-2 headings">fashion photo</h5>
+                        </div>
+                        
+                    </div>
+
+                    <div class="col-12 col-md-6 col-lg-4 my-4">
+                        <div class="card border-0">
+                            <img src="assets/img/gallery/photo6.jpg" alt="photo6" class="cardshadows" />
+                            <h5 class="text-uppercase text-light  fw-bold p-2 headings">family photo</h5>
+                        </div>
+                        
+                    </div>
+
+
+
+                    
+                 </div>
+            </div>
+
+        </section>
+        <!-- End Collection  -->
+
+        <!-- start gallery -->
+        <section class="p-5 gallerys">
+            <div class="container-fluid">
+                <!-- start title -->
+
+                <div class="row">
+                    <div class="col-12 text-muted text-center">
+                        <h1 class="display-4 mb-4">Gallery</h1>
+                        <div class="mb-4 darkunderlines"></div>
+                        <p class="lead">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laborum sunt doloribus nesciunt hic magnam odio quam nulla quae ratione dolor iure similique reiciendis ipsum ducimus rem in, blanditiis libero assumenda.</p>
+                    </div>
+                </div>
+
+                  <!-- end title -->
+                  <ul class="list-inline  text-center text-uppercase fw-bold my-4">
+                      <li class="list-inline-item gallerylists activeitems" data-filter="all">All<span class="text-muted mx-3 mx-md-5">/</span></li>
+                      <li class="list-inline-item gallerylists" data-filter="new">New<span class="text-muted mx-3 mx-md-5">/</span></li>
+                      <li class="list-inline-item gallerylists" data-filter="free">Free<span class="text-muted mx-3 mx-md-5">/</span></li>
+                      <li class="list-inline-item gallerylists" data-filter="pro">Pro</li>
+                  </ul>
+
+            <div class="container-fluid">
+                <div class="d-flex justify-content-center flex-wrap">
+
+                    <div class="filters new"><img src="assets/img/gallery/photo1.jpg" width="300px" alt="fphoto1"></div>
+                    <div class="filters new"><img src="assets/img/gallery/photo2.jpg" width="300px" alt="fphoto2"></div>
+                    <div class="filters new"><img src="assets/img/gallery/photo3.jpg" width="300px" alt="fphoto3"></div>
+                    <div class="filters new"><img src="assets/img/gallery/photo4.jpg" width="300px" alt="fphoto4"></div>
+                    <div class="filters free"><img src="assets/img/gallery/photo5.jpg" width="300px" alt="fphoto5"></div>
+                    <div class="filters free"><img src="assets/img/gallery/photo6.jpg" width="300px" alt="fphoto6"></div>
+                    <div class="filters free"><img src="assets/img/gallery/photo7.jpg" width="300px" alt="fphoto7"></div>
+                    <div class="filters pro"><img src="assets/img/gallery/photo8.jpg" width="300px" alt="fphoto8"></div>
+                    <div class="filters pro"><img src="assets/img/gallery/photo9.jpg" width="300px" alt="fphoto9"></div>
+                    <div class="filters pro"><img src="assets/img/gallery/photo10.jpg" width="300px" alt="fphoto10"></div>
+                    <div class="filters new"><img src="assets/img/gallery/photo11.jpg" width="300px" alt="fphoto11"></div>
+                    <div class="filters new"><img src="assets/img/gallery/photo12.jpg" width="300px" alt="fphoto12"></div>
+                    <div class="filters free"><img src="assets/img/gallery/photo13.jpg" width="300px" alt="fphoto13"></div>
+                    <div class="filters free"><img src="assets/img/gallery/photo14.jpg" width="300px" alt="fphoto14"></div>
+                    <div class="filters pro"><img src="assets/img/gallery/photo15.jpg" width="300px" alt="fphoto15"></div>
+                    <div class="filters pro"><img src="assets/img/gallery/photo16.jpg" width="300px" alt="fphoto16"></div>
+                
+            </div>
+            </div>
+        </section>
+        <!-- end gallery -->
+
+        <!-- start Customer -->
+
+        <section class="p-5 customers">
+
+            <div class="container-fluid">
+                <!-- start title -->
+                <div class="row">                   
+                    <div class="col-12 text-center text-light">
+                        <h1 class="display-4 mb-4">Our Customers</h1>
+                        <div class="mb-4 underlines"></div>
+                        <p class="lead">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magni dolor ipsa ab aliquid similique commodi. Voluptates esse, rerum cumque repellat voluptate iure similique cum obcaecati ipsum error sint ducimus porro.</p>
+                    </div>
+                     <!-- end title -->
+                     <div class="row">
+                         <div class="col-md-6 mx-auto">
+
+                            <div id="customerdemo" class="carousel slide" data-bs-ride="carousel">
+
+                                <ul class="carousel-indicators">
+                                    <li data-bs-target="#customerdemo" data-bs-slide-to="0" class="active"></li>
+                                    <li data-bs-target="#customerdemo" data-bs-slide-to="1"></li>
+                                    <li data-bs-target="#customerdemo" data-bs-slide-to="2"></li>
+                                </ul>
+                               
+                                <!-- start inner carousel -->
+       
+                                <div class="carousel-inner text-center text-light">
+       
+                                   <div class="carousel-item active">
+                                       
+                                       <img src="assets/img/users/user1.jpg" width="150px" alt="user1" class="img-fluid rounded-circle m-5 customers">
+                                       
+                                       <blockquote class="blockquote">
+                                           <p class="lead mb-5">
+                                               Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate maiores voluptatem, deleniti rem, voluptate mollitia odio repudiandae aliquam.
+                                           </p>
+                                       </blockquote>
+                                       <h5 class="text-uppercase mb-3">Ms.Jelly</h5>
+
+                                       <ul class="list-inline mb-5">
+
+                                        <li class="list-inline-item"><i class="fas fa-star text-warning"></i></li>
+                                        <li class="list-inline-item"><i class="fas fa-star text-warning"></i></li>
+                                        <li class="list-inline-item"><i class="fas fa-star text-warning"></i></li>
+                                        <li class="list-inline-item"><i class="fas fa-star text-warning"></i></li>
+                                        <li class="list-inline-item"><i class="fas fa-star text-warning"></i></li>
+                                    </ul>
+       
+                                   </div>
+       
+                                    
+                                   <div class="carousel-item">
+                                       
+                                       <img src="assets/img/users/user2.jpg" width="150px" alt="user1" class="img-fluid rounded-circle m-5 customers">
+                                       
+                                       <blockquote class="blockquote">
+                                           <p class="lead mb-5">
+                                               Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate maiores voluptatem, deleniti rem, voluptate mollitia odio repudiandae aliquam.
+                                           </p>
+                                       </blockquote>
+       
+                                       <h5 class="text-uppercase mb-3">Mr.Atom</h5>
+
+                                       <ul class="list-inline mb-5">
+                                           <li class="list-inline-item"><i class="fas fa-star text-warning"></i></li>
+                                           <li class="list-inline-item"><i class="fas fa-star text-warning"></i></li>
+                                           <li class="list-inline-item"><i class="fas fa-star text-warning"></i></li>
+                                           <li class="list-inline-item"><i class="fas fa-star text-warning"></i></li>
+                                           <li class="list-inline-item"><i class="fas fa-star text-warning"></i></li>
+                                       </ul>
+                                       
+                                   </div>
+       
+                                   <div class="carousel-item">
+                                       
+                                       <img src="assets/img/users/user3.jpg" width="150px" alt="user3" class="img-fluid rounded-circle m-5 customers">
+                                       
+                                       <blockquote class="blockquote">
+                                           <p class="lead mb-5">
+                                               Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate maiores voluptatem, deleniti rem, voluptate mollitia odio repudiandae aliquam.
+                                           </p>
+                                       </blockquote>
+       
+                                       <h5 class="text-uppercase mb-3">Ms.John</h5>
+ 
+                                       <ul class="list-inline mb-5">
+                                        <li class="list-inline-item"><i class="fas fa-star text-warning"></i></li>
+                                        <li class="list-inline-item"><i class="fas fa-star text-warning"></i></li>
+                                        <li class="list-inline-item"><i class="fas fa-star text-warning"></i></li>
+                                        <li class="list-inline-item"><i class="fas fa-star text-warning"></i></li>
+                                        <li class="list-inline-item"><i class="fas fa-star text-warning"></i></li>
+                                    </ul>
+
+                                   </div>
+       
+                                 
+       
+                                   </div>
+                                   <!-- end inner carousel -->
+                         </div>
+                     </div>
+  
+                         </div>
+
+                     </div>
+                </div>
+            </div>
+
+        </section>
+           <!-- end Customer -->
+        
+           <!-- Start Pricing -->
+
+           <section class="p-5 text-center pricing">
+
+            <div class="container-fluid">
+                <!-- start title -->
+                <div class="row">                   
+                    <div class="col-12 text-secondary">
+                        <h1 class="display-4 mb-4">Join Us Now</h1>
+                        <div class="mb-4 darkunderlines"></div>
+                        <p class="lead">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magni dolor ipsa ab aliquid similique commodi. Voluptates esse, rerum cumque repellat voluptate iure similique cum obcaecati ipsum error sint ducimus porro.</p>
+                    </div>
+                     <!-- end title -->
+
+                     <div class="row align-items-center m-4">
+                         <div class="col-lg-4 mb-4">
+                             <div class="card text-light cardones movefromlefts">
+                                 <div class="card-body">
+                                    <h5 class="fw-bold text-uppercase text-center mb-5">Indoor membership</h5>
+                                <ul class="list-unstyled">
+                                    <li class="fw-bold py-3 carditems">Photoshop</li>
+                                    <li class="fw-bold py-3 carditems">After effect</li>
+                                    <li class="fw-bold py-3 carditems">Video Montage</li>
+                                    <li class="fw-bold py-3 carditems border-0">Graphic Design</li>
+                                </ul>
+                                <a href="" class="btn text-uppercase  text-light cardbtns">Sign up</a>
+                                 </div>
+                                
+                             </div>                             
+                         </div>
+
+                         <div class="col-lg-4 mb-4">
+                            <div class="card text-light cardthrees movefrombottoms">
+                                <div class="card-body">
+                                   <h5 class="fw-bold text-uppercase text-center mb-5">Season membership</h5>
+                               <ul class="list-unstyled">
+                                   <li class="fw-bold py-3 carditems">Photoshop</li>
+                                   <li class="fw-bold py-3 carditems">After effect</li>
+                                   <li class="fw-bold py-3 carditems">Video Montage</li>
+                                   <li class="fw-bold py-3 carditems">Graphic Design</li>
+                                   <li class="fw-bold py-3 carditems border-0">Transportation</li>
+                               </ul>
+                               <a href="" class="btn text-uppercase  text-light cardbtns">Sign up</a>
+                                </div>
+                               
+                            </div>                             
+                        </div>
+
+                         <div class="col-lg-4 mb-4">
+                            <div class="card text-light cardtwos movefromrights">
+                                <div class="card-body">
+                                   <h5 class="fw-bold text-uppercase text-center mb-5">Outdoor membership</h5>
+                               <ul class="list-unstyled">
+                                   <li class="fw-bold py-3 carditems">Photoshop</li>
+                                   <li class="fw-bold py-3 carditems">After effect</li>
+                                   <li class="fw-bold py-3 carditems">Video Montage</li>
+                                   <li class="fw-bold py-3 carditems border-0">Graphic Design</li>
+                                  
+                               </ul>
+                               <a href="" class="btn text-uppercase  text-light cardbtns">Sign up</a>
+                                </div>
+                               
+                            </div>                             
+                        </div>                       
+                     </div>
+                     <div class="">
+                         <i class="fas fa-camera fa-5x">
+                         </i>
+                         <h1 class="display-5 text-muted">Thank You</h1>
+                     </div>
+                </div>
+            </section>
+                 <!-- Start Pricing -->
+
+                 <!-- start sign in -->
+                    <section class="p-5 contacts">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-lg-5">
+                                    <h1 class="text-white display-4">Subscribe Now</h1>
+                                    <form  action="/" method="post">
+                                        <div class="py-5">
+                                            <input type="text" name="name" id="name" class="form-control my-2 p-2 inputs" placeholder="Enter Your Name" autocomplete="off">
+                                            <label for="name" class="labels">Enter Your Name</label>
+                                        </div>
+
+                                        <div class="py-5">
+                                            <input type="text" name="email" id="email" class="form-control my-2 p-2 inputs" placeholder="Enter Your Email" autocomplete="off">
+                                            <label for="emai" class="labels">Enter Your Email</label>
+                                        </div>
+
+                                        <div class="py-5">
+                                            <input type="checkbox" name="accept" id="accept" class="form-check-input">
+                                            <label for="accept" class="form-check-label text-light">Send Anouncements</label>
+                                        </div>
+
+                                        <div class="d-grid">
+                                            <button type="submit" class="btn text-uppercase fw-bold rounded-0 submitbtns">Subscribe</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+
+                    </section>
+                 <!-- end sign in -->
+                 <!-- start footer -->
+        <section class="bg-dark p-5">
+            <div class="container-fluid">
+                <div class="row  text-white">
+
+                    <div class="col-sm-6 col-md-3 mb-3">
+                        <h5>About Us</h5>
+                        <p class="small">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cumque nobis voluptatum quo id delectus laudantium molestias doloribus ipsam ipsa sed provident placeat saepe reprehenderit aliquam porro, mollitia molestiae recusandae odio!</p>
+                    </div>
+
+                    <div class="col-sm-6 col-md-3">
+                        <h5>Visit Us</h5>
+                        <ul class="list-unstyled footerlinks">
+                            <li><a href="">Home</a></li>
+                            <li><a href="">Mission</a></li>
+                            <li><a href="">Collection</a></li>
+                            <li><a href="">Gallery</a></li>
+                            <li><a href="">Customer</a></li>
+                            <li><a href="">Pricing</a></li>
+                            <li><a href="">Contact</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-sm-6 col-md-3 mb-3">
+                        <h5>Contact Us</h5>
+                        <ul class="list-unstyled footerlinks">
+                        <li><a href="">Facebook</a></li>
+                        <li><a href="">Viber</a></li>
+                        <li><a href="">Telegram</a></li>
+                        <li><a href="">Instagram</a></li>
+                        <li><a href="">+95 094445540073</a></li>
+                       
+                    </ul>
+                    </div>
+
+                    <div class="col-sm-6 col-md-3 mb-3">
+                        <h5>Feed Back</h5>
+                        <p class="small">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cumque nobis voluptatum quo id delectus laudantium molestias doloribus ipsam ipsa sed provident placeat saepe reprehenderit aliquam porro, mollitia molestiae recusandae odio!</p>
+                        <div class="mb-3 input-group">
+                            <input type="text" name="feedemail" id="feedemail" class="form-control" placeholder="Email">
+                            
+                            <button class="btn text-light text-uppercase bg-danger" type="button">Send</button>
+                           
+                            
+                        </div>
+                    </div>
+
+                    
+                </div>
+                <div class="row">
+                    <div class="col-12 text-center text-light  border-top">
+                        <p>&copy;<span class=" mx-2 years"></span>Copy All Reserved</p>
+                    </div>
+                </div>
+                
+            </div>
+        </section>
+           <!-- end footer -->
+        <!-- ========bootstrap js=========-->
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+            crossorigin="anonymous"
+        ></script>
+        <!-- ========fontawesome kit=========-->
+        <script
+            src="https://kit.fontawesome.com/bbebffa3fe.js"
+            crossorigin="anonymous"
+        ></script>
+        <script src="js/app.js"></script>
+    </body>
+</html>

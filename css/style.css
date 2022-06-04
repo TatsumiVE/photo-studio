@@ -1,0 +1,347 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+body {
+    font-family: "Roboto", sans-serif;
+    margin: 0;
+}
+
+/* start header */
+
+header {
+    height: 100vh;
+
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+        url("../assets/img/etc/cover.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    position: relative;
+}
+/* start nav */
+.navbar {
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5));
+    padding: 20px 30px;
+
+    transition: all 1s;
+}
+
+.navmenus {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
+    padding: 5px 30px;
+}
+
+.menuitems {
+    color: white;
+    font-size: 13px;
+    letter-spacing: 1px;
+
+    transition: color 0.5s;
+}
+
+.menuitems:hover {
+    color: #1a99e8;
+}
+
+.line1,
+.line2,
+.line3 {
+    width: 20px;
+    height: 3px;
+    margin: 5px;
+
+    transition: all 0.3s;
+}
+
+.changes .line1 {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+.changes .line2 {
+    opacity: 0;
+}
+.changes .line3 {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+/* end nav */
+
+/* start banner */
+.banners {
+    width: 80%;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+}
+.bannerheaders {
+    animation: bani 2s;
+}
+.bannerparas {
+    animation: bani 2s;
+    animation-delay: 0.5s;
+    animation-fill-mode: backwards;
+}
+
+@keyframes bani {
+    0% {
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+/* end banner */
+
+/* end header */
+
+/* ==================================================================== */
+
+/* start mission */
+.missions {
+    background-color: #031c2b;
+}
+
+/* start title */
+.underlines {
+    width: 170px;
+    border: 2px solid white;
+    margin: auto;
+}
+/* end end title */
+.cameraimgs.formlefts {
+    animation: anileft 2s;
+}
+
+.missiontexts.formrights {
+    animation: aniright 2s;
+}
+
+@keyframes anileft {
+    0% {
+        transform: translate(-150px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translate(0);
+        opacity: 1;
+    }
+}
+
+@keyframes aniright {
+    0% {
+        transform: translate(30px);
+        opacity: 0;
+    }
+    100% {
+        transform: translate(0);
+        opacity: 1;
+    }
+}
+/*end mission */
+
+/* start collection */
+.card {
+    position: relative;
+}
+.cardshadows {
+    box-shadow: 5px 8px 20px #333;
+}
+
+.headings {
+    width: 70%;
+    font-size: 15px;
+    background-color: #444;
+    letter-spacing: 3px;
+    cursor: pointer;
+
+    position: absolute;
+    top: 70%;
+    right: 0;
+
+    opacity: 0.8;
+}
+
+.headings:hover {
+    opacity: 1;
+}
+/* end collection */
+
+/* start gallery */
+
+/* start title */
+.darkunderlines {
+    width: 170px;
+    border: 2px solid #444;
+    margin: auto;
+}
+/* end title */
+
+/* start gallery navbar */
+.gallerylists {
+    color: #777;
+    cursor: pointer;
+}
+.gallerylists.activeitems {
+    color: #035efc;
+}
+/* end gallery navbar */
+
+/* end gallery */
+
+/* start customer */
+.customers {
+    background-color: #17111f;
+}
+/* end customer */
+
+/* start pricing  */
+.cardones,
+.cardtwos,
+.cardthrees {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+        url("../assets/img/etc/pricing.jpg");
+
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    border: 0;
+
+    box-shadow: 7px 18px 50px #111;
+}
+
+.carditems {
+    width: 55%;
+    border-bottom: 1px solid #eee;
+    margin: auto;
+}
+
+.cardbtns {
+    width: 130px;
+    background-color: #fc4103;
+    border-radius: 25px;
+
+    box-shadow: 5px 3px 10px #111;
+}
+
+.cardbtns:hover {
+    background-color: #fc7703;
+    transform: translateY(-2px);
+}
+.movefromlefts {
+    animation: movefromleft 2s;
+}
+
+.movefrombottoms {
+    animation: movefrombottom 2s;
+}
+
+.movefromrights {
+    animation: movefromright 2s;
+}
+
+@keyframes movefromleft {
+    0% {
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes movefrombottom {
+    0% {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes movefromright {
+    0% {
+        transform: translateX(100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+/* end pricing */
+
+/* Start sign in */
+.contacts {
+    background: linear-gradient(
+            105deg,
+            rgba(0, 0, 0, 0.9) 0%,
+            rgba(0, 0, 0, 0.9) 50%,
+            transparent 50%
+        ),
+        url("../assets/img/etc/lady.jpg");
+
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.inputs {
+    background: transparent;
+    border-color: transparent;
+    border-bottom: 2px solid #eee;
+
+    border-radius: 0;
+}
+
+.inputs:focus {
+    color: #ccc;
+    background-color: transparent;
+    border-color: transparent;
+    border-bottom: 2px solid #fc4103;
+
+    /* form bootstrap */
+    box-shadow: none;
+}
+
+.submitbtns {
+    background-color: #fc4103;
+    color: #ccc;
+}
+.labels {
+    display: block;
+    color: #eee;
+    font-size: 15px;
+    margin-left: 5px;
+    margin-top: -70px;
+
+    transition: all 0.5s;
+}
+
+.inputs:placeholder-shown + .labels {
+    visibility: hidden;
+    transform: translate(20px, 20px);
+}
+
+/* end sign in */
+
+/* start footer */
+.footerlinks > li > a {
+    font-size: 13px;
+    color: white;
+    text-decoration: none;
+
+    transition: all 0.5s;
+}
+
+.footerlinks > li > a:hover {
+    color: #035efc;
+}
+/* End footer */
